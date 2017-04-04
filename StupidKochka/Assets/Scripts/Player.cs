@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public bool groundCheck;
     private Animator animator;
     private SpriteRenderer sprite;
+    public bool isSit ;
 
     void Start()
     {
@@ -20,8 +21,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (groundCheck) State = CharState.Run;
+        if (groundCheck)
+        {
+            if(!isSit)
+            State = CharState.Run;
+            
+        }
+
+        if (isSit) State = CharState.Sit;
+
         CheckGround();
+
     }
 
     private CharState State
@@ -40,6 +50,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Sit(bool sit)
+    {
+        
+        isSit = true;
+              
+    }
+
+    public void Up(bool up)
+    {
+
+        isSit = false;
+
+    }
+
     private void CheckGround()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 2F);
@@ -47,6 +71,7 @@ public class Player : MonoBehaviour
         groundCheck = colliders.Length > 1;
 
         if (!groundCheck) State = CharState.Jump;
+      
     }
 
    
