@@ -75,9 +75,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Code.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\ProteinChecker.cs" />
     <Compile Include="Assets\Scripts\bgMove.cs" />
     <Compile Include="Assets\Scripts\groundScroll.cs" />
+    <Compile Include="Assets\Scripts\onjectsGeneration.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

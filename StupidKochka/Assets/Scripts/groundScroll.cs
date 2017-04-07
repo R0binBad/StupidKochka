@@ -14,7 +14,7 @@ public class groundScroll : MonoBehaviour
 
         if (transform.position.x < startPoint.position.x)
         {
-            transform.position = new Vector3(endPoint.position.x, transform.position.y, transform.position.z);
+            Destroy(transform.gameObject);
         }
     }
 }
