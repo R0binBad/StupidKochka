@@ -11,19 +11,20 @@ public class MainMenuButtons : MonoBehaviour {
     {
         if(PlayerPrefs.GetString("music") == "off")
         {
-            m_on.SetActive(true);
-            m_off.SetActive(false);
+            m_on.SetActive(false);
+            m_off.SetActive(true);
         }
         else
         {
-            m_on.SetActive(false);
-            m_off.SetActive(true);
+            m_on.SetActive(true);
+            m_off.SetActive(false);
         }
     }
 
     private void OnMouseDown()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
+        
     }
 
     private void OnMouseUp()
@@ -34,6 +35,9 @@ public class MainMenuButtons : MonoBehaviour {
 
     private void OnMouseUpAsButton()
     {
+        if (PlayerPrefs.GetString("music") != "off")
+            GameObject.Find("Click Audio").GetComponent<AudioSource>().Play() ;
+
         switch (action)
         {
             case "start":
@@ -54,8 +58,12 @@ public class MainMenuButtons : MonoBehaviour {
                     m_off.SetActive(false);
                 }
                 break;
-        
+            case "up":
+                GameObject.Find("UpSound").GetComponent<AudioSource>().Play();
+                break;
+
         }
+        
 
           
             

@@ -76,12 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Code.cs" />
+    <Compile Include="Assets\Scripts\DontDestroyMusic.cs" />
     <Compile Include="Assets\Scripts\FailPause.cs" />
+    <Compile Include="Assets\Scripts\KillKochka.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ProteinChecker.cs" />
     <Compile Include="Assets\Scripts\bgMove.cs" />
     <Compile Include="Assets\Scripts\groundScroll.cs" />
+    <Compile Include="Assets\Scripts\lastObject.cs" />
     <Compile Include="Assets\Scripts\onjectsGeneration.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ProteinChecker : MonoBehaviour
 {
-    public Transform prot;
     public Text txt;
     private int amount = 0;
 
