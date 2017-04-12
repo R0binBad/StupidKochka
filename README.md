@@ -1,0 +1,2 @@
+# StupidKochka
+Game for Android 
