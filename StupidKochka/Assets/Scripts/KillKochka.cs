@@ -11,7 +11,7 @@ public class KillKochka : MonoBehaviour {
     {
         if (Kochka.transform.tag == "killer")
         {
-                    Destroy(gameObject);
+            /*        //Destroy(gameObject);
             GameObject.FindGameObjectWithTag("groundQuad").GetComponent<bgMove>().enabled = false;
             GameObject.FindGameObjectWithTag("forest").GetComponent<bgMove>().enabled = false;
 
@@ -19,15 +19,16 @@ public class KillKochka : MonoBehaviour {
             for(int i = 0; i < n; i++)
             {
                 GameObject.FindGameObjectWithTag("killer").active = false;
+            }*/
 
-            }
-            Application.LoadLevel("StartMenu");
-            //GameObject.FindGameObjectWithTag("home").active = true;
-            //Time.timeScale = 0;
+            gameObject.GetComponent<Player>().isLive = false;//убийство кровь матюки
+            gameObject.GetComponent<Player>().GetComponent<AudioSource>().clip = gameObject.GetComponent<Player>().dead;//надо нормальную архитектуры сделать наверна или хуй забить 
+            gameObject.GetComponent<Player>().GetComponent<AudioSource>().Play();
+            /*Application.LoadLevel("StartMenu");
+            //Application.LoadLevel("main");
+            GameObject.FindGameObjectWithTag("home").active = true;
+            Time.timeScale = 0;*/
 
         }
-
-
-
     }
 }

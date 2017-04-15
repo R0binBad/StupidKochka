@@ -9,15 +9,15 @@ public class MainMenuButtons : MonoBehaviour {
 
     private void Start()
     {
-        if(PlayerPrefs.GetString("music") == "off")
-        {
-            m_on.SetActive(false);
-            m_off.SetActive(true);
-        }
-        else
+        if(PlayerPrefs.GetString("music") != "off")
         {
             m_on.SetActive(true);
             m_off.SetActive(false);
+        }
+        else
+        {
+            m_on.SetActive(false);
+            m_off.SetActive(true);
         }
     }
 
@@ -35,7 +35,7 @@ public class MainMenuButtons : MonoBehaviour {
 
     private void OnMouseUpAsButton()
     {
-        if (PlayerPrefs.GetString("music") != "off")
+        if (PlayerPrefs.GetString("music") == "on")// я тут поменял // и нахуя ишак ебаный .....не умеешь не берись блять
             GameObject.Find("Click Audio").GetComponent<AudioSource>().Play() ;
 
         switch (action)

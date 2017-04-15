@@ -14,6 +14,7 @@ public class lastObject : MonoBehaviour
         if (other.transform.tag == "endPoint")
         {
             lastObjectOnstart();
+            Debug.Log(gameObject.name+"event");
         }
     }
 }
