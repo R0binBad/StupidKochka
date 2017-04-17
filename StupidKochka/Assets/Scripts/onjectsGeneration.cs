@@ -14,6 +14,7 @@ public class onjectsGeneration : MonoBehaviour
     public GameObject Protein;
     public GameObject Cock;
     private System.Random rnd;
+    public bool groundCheck;
 
     public Transform endPoint;
     public Transform startPoint;
@@ -29,8 +30,15 @@ public class onjectsGeneration : MonoBehaviour
 
     void Update()
     {
-
+     
     }
+
+  /*  IEnumerator WaitOneSecond()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject ob = Instantiate(balls, gameObject.transform.position, Quaternion.identity) as GameObject;
+        Repeat();
+    }*/
 
     public void Generate()
     {
@@ -44,7 +52,9 @@ public class onjectsGeneration : MonoBehaviour
             lastPref.GetComponent<groundScroll>().endPoint = endPoint;
             lastPref.GetComponent<groundScroll>().startPoint = startPoint;
             lastPref.GetComponent<groundScroll>().speed = 8;
+                         
         }
+        
         lastPref.AddComponent<lastObject>();
         Debug.Log(lastPref.name);
 
@@ -60,7 +70,7 @@ public class onjectsGeneration : MonoBehaviour
             scene.Add(prefab);
             prefab = new Prefab(Protein, new Vector3((float)12.41, (float)1.4, (float)-5.839844));
             scene.Add(prefab);
-            prefab = new Prefab(FattyBitch, new Vector3((float)17.34, (float)-1.34, (float)-5.839844));
+            prefab = new Prefab(FattyBitch, new Vector3((float)17.34, (float)-1, (float)-5.839844));
             scene.Add(prefab);
             prefab = new Prefab(Bottle, new Vector3((float)23.6, (float)-1.48, (float)-5.839844));
             scene.Add(prefab);
@@ -79,7 +89,7 @@ public class onjectsGeneration : MonoBehaviour
         scenes.Add(scene);
 
         scene = new List<Prefab>();
-            prefab = new Prefab(FattyBitch, new Vector3((float)14.01, (float)-1.34, (float)-5.839844));
+            prefab = new Prefab(FattyBitch, new Vector3((float)14.01, (float)-1, (float)-5.839844));
             scene.Add(prefab);
             prefab = new Prefab(Protein, new Vector3((float)17.41, (float)1.4, (float)-5.839844));
             scene.Add(prefab);
@@ -100,7 +110,7 @@ public class onjectsGeneration : MonoBehaviour
         scenes.Add(scene);
 
         scene = new List<Prefab>();
-            prefab = new Prefab(FattyBitch, new Vector3((float)13.92, (float)-1.34, (float)-5.839844));
+            prefab = new Prefab(FattyBitch, new Vector3((float)13.92, (float)-1, (float)-5.839844));
             scene.Add(prefab);
             prefab = new Prefab(Protein, new Vector3((float)17.77, (float)1.23, (float)0));
             scene.Add(prefab);

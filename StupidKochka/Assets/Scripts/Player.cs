@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 2F);
 
         //groundCheck = colliders.Length > 1;
-        bool tempCheck = false;  
+        bool tempCheck = false;
         if (colliders.Length > 1)
         {
             foreach (Collider2D collid in colliders)

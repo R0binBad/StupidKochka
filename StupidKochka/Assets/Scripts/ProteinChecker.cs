@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ProteinChecker : MonoBehaviour
 {
+
     public Text txt;
     //private int amount = 0;
     private float distance;
@@ -33,6 +34,7 @@ public class ProteinChecker : MonoBehaviour
     {
         if (gameObject.GetComponent<Player>().isLive == true)//пока жив обновлять
         {
+
             progressBar.value -= Time.deltaTime * 5;
             if (progressBar.value == 0) gameObject.GetComponent<Player>().isLive = false;//если катаболизм ноль-смерть
             distance += (Time.deltaTime * speed) / 5;

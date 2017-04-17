@@ -35,7 +35,7 @@ public class MainMenuButtons : MonoBehaviour {
 
     private void OnMouseUpAsButton()
     {
-        if (PlayerPrefs.GetString("music") == "on")// я тут поменял // и нахуя ишак ебаный .....не умеешь не берись блять
+        if (PlayerPrefs.GetString("music") == "on")// я тут поменял //влагалище свое трогай блять, а не мой код
             GameObject.Find("Click Audio").GetComponent<AudioSource>().Play() ;
 
         switch (action)
@@ -58,9 +58,7 @@ public class MainMenuButtons : MonoBehaviour {
                     m_off.SetActive(false);
                 }
                 break;
-            case "up":
-                GameObject.Find("UpSound").GetComponent<AudioSource>().Play();
-                break;
+           
 
         }
         
