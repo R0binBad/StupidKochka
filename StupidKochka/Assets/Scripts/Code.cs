@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Code : MonoBehaviour
 {
-    private static ILogger logger = Debug.logger;
+
     // Use this for initializations
     StringBuilder str = new StringBuilder();
     void Start()

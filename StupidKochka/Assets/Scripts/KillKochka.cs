@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillKochka : MonoBehaviour
-{
-    
-    void OnTriggerEnter2D(Collider2D Kochka)
+public class KillKochka : MonoBehaviour {
+	private Player player;
+	private bool sound = true ;
+		//Посмотреть как будет работать при генерации новых сцен, типа объекты удаляются же,
+    //если сцена будет рандомом второй раз выбрана, останутся ли там банки или нет
+	void Start(){
+		player = gameObject.GetComponent<Player>();
+		if (PlayerPrefs.GetString ("music") == "off") sound = false;
+	}
+    void OnTriggerEnter2D(Collider2D entity)
     {
-        if (Kochka.transform.tag == "killer")
+        if (entity.transform.tag == "killer")
         {
             /*        //Destroy(gameObject);
             GameObject.FindGameObjectWithTag("groundQuad").GetComponent<bgMove>().enabled = false;
@@ -19,9 +25,8 @@ public class KillKochka : MonoBehaviour
                 GameObject.FindGameObjectWithTag("killer").active = false;
             }*/
 
-            gameObject.GetComponent<Player>().isLive = false;//убийство кровь матюки
-            gameObject.GetComponent<Player>().GetComponent<AudioSource>().clip = gameObject.GetComponent<Player>().dead;//надо нормальную архитектуры сделать наверна или хуй забить 
-            gameObject.GetComponent<Player>().GetComponent<AudioSource>().Play();
+			player.kill();//убийство кровь матюки
+			if(sound == true)entity.GetComponentInParent<AudioSource>().Play();
             /*Application.LoadLevel("StartMenu");
             //Application.LoadLevel("main");
             GameObject.FindGameObjectWithTag("home").active = true;

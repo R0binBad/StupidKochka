@@ -78,8 +78,10 @@
     <Compile Include="Assets\Scripts\Code.cs" />
     <Compile Include="Assets\Scripts\DontDestroyMusic.cs" />
     <Compile Include="Assets\Scripts\FailPause.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\KillKochka.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ProteinChecker.cs" />
     <Compile Include="Assets\Scripts\StayNormal.cs" />

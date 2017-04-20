@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour {
 
@@ -35,13 +36,13 @@ public class MainMenuButtons : MonoBehaviour {
 
     private void OnMouseUpAsButton()
     {
-        if (PlayerPrefs.GetString("music") == "on")// я тут поменял //влагалище свое трогай блять, а не мой код
+        if (PlayerPrefs.GetString("music") == "on")// я тут поменял // и нахуя ишак ебаный .....не умеешь не берись блять
             GameObject.Find("Click Audio").GetComponent<AudioSource>().Play() ;
 
         switch (action)
         {
             case "start":
-                Application.LoadLevel("main");
+                SceneManager.LoadScene("main");
                 break;
 
             case "music":
@@ -58,13 +59,9 @@ public class MainMenuButtons : MonoBehaviour {
                     m_off.SetActive(false);
                 }
                 break;
-           
 
-        }
-        
 
-          
-            
+        }    
 
     }
 

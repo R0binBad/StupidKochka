@@ -7,6 +7,7 @@ public class FailPause : MonoBehaviour
 
     bool paused = false;
     public string action;
+    public GameObject PauseUI;
 
     private void OnMouseUpAsButton()
     {
@@ -17,13 +18,16 @@ public class FailPause : MonoBehaviour
                 {
                     if (!paused)
                     {
+                        PauseUI.SetActive(true);
                         Time.timeScale = 0;
                         paused = true;
+                        
                     }
                     else
                     {
                         Time.timeScale = 1;
                         paused = false;
+                        PauseUI.SetActive(false);
                     }
                 }
                     break;
